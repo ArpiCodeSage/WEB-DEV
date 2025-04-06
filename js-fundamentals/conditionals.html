@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>BEGIN</button>
+    <script>
+        const btn=document.querySelector("button");
+        btn.addEventListener("click",func);
+        function func()
+        {
+            const name=prompt("who's there?")
+            if(name=="cancel")
+        {
+            btn.textContent="CANCELED";
+        }
+        
+        else if(name=="admin"){
+            const ask=prompt("PASSWORD?");
+            if(ask=="cancel"){
+                btn.textContent="canceled"
+            }
+            else if(ask=="TheMaster"){
+                btn.textContent="welcome!"
+            }
+            else{
+                btn.textContent="wrong password"
+            }
+        }
+        else
+        {
+            btn.textContent="I DONT KNOW YOU";
+        }
+            
+        }
+    </script>
+    
+</body>
+</html>

@@ -6,11 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <button>Start Machine</button>
-    <p>the button is stopped</p>
+    <button id="start">Start Machine</button>
+    <p id="inst1">the button is stopped</p>
     <script>
-       const btn=document.querySelector("button");
-       const para=document.querySelector("p");
+       const btn=document.querySelector("#start");
+       const para=document.querySelector("#inst1");
        btn.addEventListener("click",func);
        function func(){
         if(btn.textContent==="Start Machine")
@@ -24,7 +24,7 @@
        }
 
        } 
-       alert("heyyyyy")
+       
     </script>
 </body>
 </html>
