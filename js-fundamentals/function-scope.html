@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>let userName = 'John';
+
+        function showMessage() {
+          userName = "Bob"; // (1) changed the outer variable!
+          let message = 'Hello, ' + userName;
+          alert(message);
+        }
+        
+        alert(userName); // John — before function call
+        
+        showMessage(); // alerts "Hello, Bob"
+        
+        alert(userName); // Bob — it was modified!
+        
+function showMessage1() {
+  let userName = "Bob"; // new local variable!
+  let message = 'Hello, ' + userName;
+  alert(message);
+}
+
+showMessage1(); // alerts "Hello, Bob"
+
+alert(userName); // Bob- because showmessage() already changed its value
+let age=prompt("whats your age")
+function checkAge(age) {
+    return (age > 18) ? true : confirm('Did parents allow you?');
+}
+checkAge(age)
+        </script>
+</body>
+</html>

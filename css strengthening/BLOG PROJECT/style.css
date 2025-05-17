@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*when you use box-sizing:border-box and then you  set width,padding and border of an element, then the width stays the same and the content shrinks to make room for padding and border(it helps from overflowing the containers) */
+}
+body{
+    height: 100%;/*makes element's height 100% of its parent element's height*/
+    width: 100%;
+}
+.header_container{
+    
+    margin-bottom: 2.8rem;
+}
+.title{
+    font-size: 2em;
+    line-height: 2.3rem;
+    font-weight: 700;
+    padding-bottom: 0.7rem;
+    text-align: center;
+    text-decoration: underline;
+}
+.header_desc
+{
+    max-width: 678px;
+    color: rgb(82, 79, 79);
+    margin: 0 auto;
+
+    text-align: center;
+
+}
+
+.card_desc{
+    color: black;
+    font-size: 1rem;
+    margin-bottom: 2.2rem;
+}
+.main_container
+{
+    display: grid;
+    gap: 1.5rem;
+    /* gap between grid items */
+    grid-template-columns: repeat(4,1fr);/*creates 4 equal columns each taking 1 fraction of available space of the container */
+}
+.card_footer_container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.35rem;
+    flex-wrap: nowrap;/*stays on one line*/
+    /*flex-wrap: wrap;/*we are doing this cuz at certain vw's the technology becomes kinda hidden.flex-shrink controls how much an element is allowed to shrink when there's not enough space in a flex container.
+
+    flex-shrink: 1 (default) — it can shrink.
+    
+    flex-shrink: 0 — it won’t shrink, even if space i*/
+    
+}
+@media(max-width:0px)
+{
+    .main_container{
+    
+    grid-template-columns: repeat(3,1r);
+    }
+}
+.card_container
+{
+    display: flex;
+    flex-direction: column;/*arranges flex items vertically, creating a column-like layout*/
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.card_container:hover
+.card_image{
+    transform: scale(1.18);
+    transition-duration: 200ms;
+
+
+}
+.author_info_container{
+    display: flex;
+    flex-direction: column;
+}
+.card_title{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(62, 197, 21, 0.553);
+    margin-bottom: 4.5px;
+}
+.card_title:hover{
+    color: darkblue;
+}
+.card_image_container
+{
+    position: relative;/*so that when we set its children(img) to absolute it can position itself relative to its parent aka this container instead of the entire html*/
+    overflow: hidden;
+    height: 14rem;
+}
+.card_image{
+    object-fit: cover;/* the image will scale to fill the container while preserving its aspect ratio.
+
+    Any excess part of the image will be cropped, but it will completely cover the container (without stretching).*/
+    object-position: center;/*makes sure that the image is centered within its container.*/
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+}
+.card_title_container{
+    display: flex;
+    flex-direction: column;
+    padding: 0.35rem;
+}
+.author_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    min-width:fit-content;
+    align-items: center;
+}
+.author_info_container span:first-child{
+    color: blue;
+
+}
+.author_avatar_container
+{
+    
+    height: 3.5rem;
+    width: 3.5rem;
+    overflow: hidden;
+    border: 1px solid rgb(50, 47, 47);
+    border-radius: 50%;/*to turn the border into a circle*/
+    background-color: rgb(94, 80, 80);
+    overflow: hidden;
+    white-space: nowrap;
+}
+.container{
+    max-width: 75vw;
+    padding: 2rem 1rem;/*x rem means x times the font size of the parent element */
+    margin: 0 auto;/*top and bottom 0 and to place at centre we use auto*/
+
+}
+a{
+    text-decoration: none;
+}
+.card_tag_container{
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 2px;
+    line-height: 1.3rem;
+    color: rgb(97, 91, 91);
+    padding: 0.25rem 0.25rem;
+    min-width: 0;/*allow to shrink below its natural width*/
+    flex-shrink: 0;
+    min-width: 200px;
+    /*flex-shrink: 0;/*we are doing this cuz in certains vw's the technology gets kinda hidden.By default, Flexbox tries to fit all items on one line (nowrap is default), even if they overflow.
+    flex-wrap: wrap; allows items to move to the next line when there's not enough space.*/
+    
+    
+}
+@media (max-width: 1200px) {
+    .main_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1000px) {
+    .main_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .main_container {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
